@@ -20,7 +20,8 @@
       "openCart": ".block_7",
       "checkCart": ".maintext",
       "cartHasItem": "contentpanel",
-      "addToChar": ".cart"
+      "addToChar": ".cart",
+      "emptyCart": ".btn.btn-sm.btn-default"
     }
   }
 }

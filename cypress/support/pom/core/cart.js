@@ -22,7 +22,16 @@ export class Cart{
     cartHasItem(){
         localSelectors = selectors.cart;
         cy.get(localSelectors.id.cartHasItem).should("exist")
+    }
 
+    emptyCart(){
+        localSelectors = selectors.cart;
+        cy.get(localSelectors.class.emptyCart).click();
+    }
+
+    cartEmpty(){
+        localSelectors = selectors.cart;
+        cy.get(localSelectors.id.cartHasItem).should('not.exist')
     }
 }
 
