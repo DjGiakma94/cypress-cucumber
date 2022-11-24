@@ -1,0 +1,27 @@
+{
+  "test_002": {
+    "id": {
+      "declineCookies": "#W0wltc",
+      "acceptCookies": "#L2AGLb",
+      "writeInGoogle": "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.RNNXgb > div > div.a4bIc > input",
+      "buttonSearch": "L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b"
+    },
+    "class": {
+      "title": "*[class^='LC20lb MBeuO DKV0Md']",
+      "searchGoogle": ".aajZCb > .lJ9FBc > center > .gNO89b",
+      "clickNextPage": "[style='display:block;margin-left:53px']"
+    },
+    "tag": {}
+  },
+  "test_003": {
+    "id": {
+      "search": "#filter_keyword"
+    },
+    "class": {
+      "startSearch": "#search_form > div > div > i",
+      "addToChar": ":nth-child(3) > .thumbnail > :nth-child(1) > img",
+      "char": ".cart"
+    },
+    "tag": {}
+  }
+}
