@@ -1,20 +1,18 @@
 /// <reference types="cypress" />
 
+import { navigation } from "../../../support/pom/core/search";
 import { Before, Given, And, When, Then } from "cypress-cucumber-preprocessor/steps";
-var localSelectors;
-var localDataEntry;
 
-before(() => {
-    cy.log("Execute before stepß");
-    localSelectors = selectors.test_003;
-    localDataEntry = dataEntry.test_003;
+
+Given("open the site", () => {
+    navigation.visitSite()
 });
 
 When("search {string}", (querySearch) => {
-    cy.get(localSelectors.id.search).type(querySearch),
-    cy.get(localSelectors.class.startSearch).click();
+    navigation.setSearch(querySearch)
+    navigation.goSearch()
 });
 
 Then("view the search result", () => {
-    cy.get(localSelectors.class.addToChar).click().should("exist");
+    navigation.viewResults()
 });

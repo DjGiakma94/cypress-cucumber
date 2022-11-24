@@ -1,9 +1,6 @@
 {
-    "test_002":{
-         "querySearch":"cypress documentation"
-    },
-    "test_003":{
+    "search":{
           "querySearch":"men"
+     }
 }
-  }
   
