@@ -1,5 +1,3 @@
-var localSelectors;
-var localDataEntry;
 
 export class Menu{
     

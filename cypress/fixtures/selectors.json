@@ -13,7 +13,8 @@
   },
   "cart": {
     "id": {
-      "cartHasItem": "#cart_checkout1"
+      "cartHasItem": "#cart_checkout1",
+      "cartUpdate": "#cart_update"
     },
     "class": {
       "selectFirstItem": "#block_frame_featured_1769 > .thumbnails > :nth-child(1) > .thumbnail > :nth-child(1) > img",
@@ -21,7 +22,24 @@
       "checkCart": ".maintext",
       "cartHasItem": "contentpanel",
       "addToChar": ".cart",
-      "emptyCart": ".btn.btn-sm.btn-default"
+      "emptyCart": ".btn.btn-sm.btn-default",
+      "addQuantity": ".input-group.input-group-sm"
     }
+  },
+  "test_001": {
+      "id": {
+        "subTotal": "#totals_table > tbody > :nth-child(1) > :nth-child(2)",
+        "rate": "#totals_table > tbody > :nth-child(2) > :nth-child(2)",
+        "addFirstResult": ":nth-child(1) > .thumbnail > :nth-child(1) > img",
+        "total": "#totals_table > tbody > :nth-child(3) > :nth-child(2)",
+        "selectSize": "#option344748"
+      },
+      "class": {
+        "addFirstMenu": "ul.thumbnails > :nth-child(1) > :nth-child(1) > img",
+        "subTotal": ":nth-child(1) > :nth-child(2) > .bold",
+        "rate": ":nth-child(2) > :nth-child(2) > .bold",
+        "total": ":nth-child(3) > :nth-child(2) > .bold"
+      },
+      "tag": {}
   }
 }

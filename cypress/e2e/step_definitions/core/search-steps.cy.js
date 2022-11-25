@@ -16,3 +16,7 @@ When("search {string}", (querySearch) => {
 Then("view the search result", () => {
     navigation.viewResults()
 });
+
+Then("the search result is null", () => {
+    navigation.nullResults()
+})

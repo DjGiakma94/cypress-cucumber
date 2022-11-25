@@ -3,9 +3,9 @@ var localSelectors;
 export class Cart{
  
 
-    selectFirstItem(){
+    routeItems(selector){
+        cy.get(selector).click();
         localSelectors = selectors.cart;
-        cy.get(localSelectors.class.selectFirstItem).click()
         cy.get(localSelectors.class.addToChar).click()
     }
 
@@ -32,6 +32,21 @@ export class Cart{
     cartEmpty(){
         localSelectors = selectors.cart;
         cy.get(localSelectors.id.cartHasItem).should('not.exist')
+    }
+
+    addQuantity(){
+        localSelectors = selectors.cart;
+        cy.get(localSelectors.class.addQuantity).click().type("2");
+    }
+
+    clickOnUpadate(){
+        localSelectors = selectors.cart;
+        cy.get(localSelectors.id.cartUpdate).click()
+    }
+
+    checkQuantity(){
+        localSelectors = selectors.cart;
+        cy.get(localSelectors.class.addQuantity).should('not.have.value', '1');
     }
 }
 

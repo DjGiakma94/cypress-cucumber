@@ -1,0 +1,55 @@
+{
+  "name": "wics",
+  "version": "2.0.0",
+  "description": "Euronext Clearing Core System",
+  "main": "e2e.js",
+  "scripts": {
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run --config video=false",
+    "cy:deleteScreenshots": "rm -rf cypress/screenshots/*.*",
+    "cy:deleteVideos": "rm -rf cypress/videos/*.*",
+    "cy:deleteDownloads": "rm -rf cypress/downloads/*.*",
+    "cy:deleteReport": "rm -rf cypress/reports && rm -rf mochawesome-report && rm -rf mochawesome.json && rm -rf mochawesome.html && npm run cy:deleteScreenshots",
+    "cy:mergeReport": "rm -rf cypress/reports/merged && node cucumber-html-report.js",
+    "core:all": "(npx cypress run --spec cypress/e2e/features/core/**/*.feature --config video=false || true) && npm run cy:mergeReport",
+    "core:financialPositions": "(npx cypress run --spec cypress/e2e/features/core/financial_positions/*.feature --config video=false || true)",
+    "core:home": "(npx cypress run --spec cypress/e2e/features/core/home/*.feature --config video=false || true)",
+    "core:masterFiles": "(npx cypress run --spec cypress/e2e/features/core/master_files/*.feature --config video=false || true)",
+    "core:system": "(npx cypress run --spec cypress/e2e/features/core/system/*.feature --config video=false || true)",
+    "core:service": "(npx cypress run --spec cypress/e2e/features/core/service/*.feature --config video=false || true)",
+    "core:trade": "(npx cypress run --spec cypress/e2e/features/core/trade/*.feature --config video=false || true)",
+    "testbook:all": "(npx cypress run --spec cypress/e2e/features/testbook/*.feature --config video=false || true) && npm run cy:mergeReport",
+    "testbook:calendars": "(npx cypress run --spec cypress/e2e/features/testbook/calendars.feature --config video=false || true)"
+
+  },
+  "author": "Fabio Ziviello",
+  "license": "ISC",
+  "keywords": [
+    "wics",
+    "cypress",
+    "cucumber",
+    "testing"
+  ],
+  "devDependencies": {
+    "convert-csv-to-json": "^1.3.3",
+    "cypress": "^10.11.0",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-downloadfile": "^1.2.3",
+    "cypress-file-upload": "^5.0.8",
+    "json-2-csv": "^3.17.2",
+    "multiple-cucumber-html-reporter": "^3.0.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/step_definitions",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}

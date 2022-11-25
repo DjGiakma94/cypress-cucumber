@@ -8,7 +8,7 @@ Cypress.Commands.add("loadFixtures", () => {
     });
   });
   
-  Cypress.Commands.add("ClickNextPage", () => {
+Cypress.Commands.add("ClickNextPage", () => {
     cy.get("#pnnext")
       .contains("Next")
       .then((ele) => {
@@ -21,5 +21,8 @@ Cypress.Commands.add("loadFixtures", () => {
           if (counter == 8) break;
         }
       });
-  });
+});
+
+
+
   

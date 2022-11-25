@@ -11,6 +11,7 @@ module.exports = defineConfig({
   },
   e2e: {
     specPattern: "**/*.feature",
+    //specPattern: "**/*.feature",
     setupNodeEvents(on, config) {
       const cucumber = require("cypress-cucumber-preprocessor").default;
       on("file:preprocessor", cucumber());

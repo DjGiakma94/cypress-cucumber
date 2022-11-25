@@ -20,6 +20,11 @@ export class Search{
         localSelectors = selectors.search;
         cy.get(localSelectors.class.existResults).should("exist");
     }
+
+    nullResults(){
+        localSelectors = selectors.search;
+        cy.get(localSelectors.class.existResults).should("not.exist");
+    }
 }
 
 export const navigation = new Search();
